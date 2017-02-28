@@ -16,8 +16,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('client', 'ClientsController@create');
-Route::post('client', 'ClientsController@store')->name('client.store');
+Route::group(['prefix'=>'admin', 'as'=>'admin.'], function() {
+	Route::get('client', 'ClientsController@create');
+	Route::post('client', 'ClientsController@store')->name('client.store');
+});
+
+
+Route::group(['prefix'=>'', 'as'=>'site.'], function() {
+	Route::get('client', 'SiteClientsController@create');
+	Route::post('client', 'SiteClientsController@store')->name('client.store');
+});
+	
 
 /*
 Route::get('/minharota', function() {

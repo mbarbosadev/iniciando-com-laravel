@@ -1,7 +1,7 @@
 <html>
-	
+	<h1>Site Client</h1>
 	<body>
-		<form method="post" action="{{ route('client.store') }}">
+		<form method="post" action="{{ route('site.client.store') }}">
 			<input type="hidden" name="_token" value="{{ csrf_token() }}">
 			<input type="text" name="value">
 			<button type="submit">Enviar</button>
