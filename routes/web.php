@@ -22,6 +22,12 @@ Route::group(['prefix'=>'admin', 'as'=>'admin.'], function() {
 });
 
 
+
+Route::group(['prefix'=>'eloquent', 'as'=>'eloquent.'], function() {
+	Route::get('clients', 'EloquentClientsController@index')->name('client.list');
+});
+	
+
 Route::group(['prefix'=>'', 'as'=>'site.'], function() {
 	Route::get('client', 'SiteClientsController@create');
 	Route::post('client', 'SiteClientsController@store')->name('client.store');
