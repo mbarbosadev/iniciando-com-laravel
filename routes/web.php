@@ -45,6 +45,11 @@ Route::post('/client', function(Request $request) {
 })->name('client.store');
 	
 
+Route::get('/if-for', function() {
+	return view('if-for');
+});
+
+
 
 // Route::get('/minharota/{nome?}', function($nome = 'Visitante') {
 // 	return "Olá $nome";
