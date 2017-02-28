@@ -34,7 +34,8 @@ Route::get('/client/{id}/{name?}', function(Request $request, $id, $name = 'Visi
 
 	return view('client-name')
 		->with('id', $id)
-		->with('name', $name);
+		->with('name', $name)
+		->with('conteudo', 'Teste');
 	
 });
 	
