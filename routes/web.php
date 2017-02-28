@@ -1,6 +1,5 @@
 <?php
 
-use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +16,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('client', 'ClientsController@create');
+Route::post('client', 'ClientsController@store')->name('client.store');
+
+/*
 Route::get('/minharota', function() {
 	return view('hello');
 });
@@ -49,8 +52,5 @@ Route::get('/if-for', function() {
 	return view('if-for');
 });
 
+*/
 
-
-// Route::get('/minharota/{nome?}', function($nome = 'Visitante') {
-// 	return "Olá $nome";
-// });
