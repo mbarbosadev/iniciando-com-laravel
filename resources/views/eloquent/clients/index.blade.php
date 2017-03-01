@@ -1,5 +1,7 @@
 <h1>Listagem de clientes</h1>
+<a href="{{ route('eloquent.client.create') }}">Cadastrar cliente</a>
 <br/><br/>
+
 <table border="1">
     <thead>
     <tr>

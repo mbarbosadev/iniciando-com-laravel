@@ -10,18 +10,22 @@ class EloquentClientsController extends Controller {
 	public function index() {
 		$clients = Client::all();
 		
-		return view('eloquent.index', [
+		return view('eloquent.clients.index', [
 			'clients'=>$clients
 		]);
 	}
 	
     
 	public function create() {
-		return view('admin.client.client');
+		return view('eloquent.clients.create');
 	}
 	
 	public function store(Request $request) {
-		return $request->get('value');
+		
+		$client = new Client();
+		$client->create($request->all());
+		
+		return redirect()->route('eloquent.client.list');
 	}
 	
 }
